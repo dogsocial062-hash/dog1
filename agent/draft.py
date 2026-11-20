@@ -52,9 +52,17 @@ def image_prompt(row):
     )
 
 
+_CLIENT = None
+
+
 def _client():
-    from google import genai
-    return genai.Client(api_key=os.environ["GEMINI_API_KEY"])
+    # Keep one client alive for the whole run. Creating it inline lets Python
+    # clean it up before the request is sent ("client has been closed").
+    global _CLIENT
+    if _CLIENT is None:
+        from google import genai
+        _CLIENT = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
+    return _CLIENT
 
 
 def write_caption(row):
