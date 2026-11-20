@@ -24,7 +24,12 @@ def main():
     date = os.getenv("POST_DATE") or today_et()
     row = plan.get_row(date)
     if not row:
-        print(f"No post planned for {date}. Nothing to do.")
+        msg = f"No post planned for {date}. Nothing to do. (Plan runs 2026-11-23 to 2026-12-22.)"
+        print(msg)
+        # On a manual run, tell the user in Telegram so a silent result is never confusing.
+        if os.getenv("GITHUB_EVENT_NAME") == "workflow_dispatch" and os.getenv("TELEGRAM_BOT_TOKEN"):
+            from agent import telegram
+            telegram.send_message(msg)
         return 0
 
     print(f"Drafting {row['date']} ({row['day']}) - {row['format']} - {row['pillar']} / {row['intent']}")
