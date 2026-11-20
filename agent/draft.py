@@ -65,6 +65,21 @@ def _client():
     return _CLIENT
 
 
+def get_caption(row):
+    """Use the pre-written caption from content_plan.csv; fall back to Gemini if it is empty."""
+    stored = (row.get("caption") or "").strip()
+    return stored if stored else write_caption(row)
+
+
+def find_image(date):
+    """Return images/<date>.jpg|jpeg|png if you added one to the repo."""
+    for ext in ("jpg", "jpeg", "png"):
+        path = ROOT / "images" / f"{date}.{ext}"
+        if path.exists():
+            return path
+    return None
+
+
 def write_caption(row):
     resp = _client().models.generate_content(model=TEXT_MODEL, contents=caption_prompt(row))
     return resp.text.strip()

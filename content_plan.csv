@@ -1,31 +1,220 @@
-date,day,format,pillar,intent,hook,idea_cta,asset
-2026-11-23,Mon,image,Pup Life,Entertain,I'm not real. My opinions on treats are.,"Meet Kona: who it is, what it cares about, plainly labeled as an AI dog. CTA: follow for daily pup content.",hero portrait
-2026-11-24,Tue,image,Healthy Dog Basics,Educate,Guests arrive Thursday. Does your dog have a plan?,"3-point holiday guest prep: a quiet room, door safety, no table scraps. CTA: save for Thursday.",checklist graphic
-2026-11-25,Wed,image,Real Dogs,Connect,What is your dog thankful for? Mine: the fridge.,Gratitude prompt that invites photos and stories in the comments. CTA: comment.,dog with a pumpkin
-2026-11-26,Thu,video,Pup Life,Entertain,"Reviewing the Thanksgiving table, from a dog's eye view.",Dog rates the table dish by dish and flags what dogs should skip; end card says check with your vet. CTA: share with a dog parent.,HeyGen video script
-2026-11-27,Fri,image,Pup Life,Entertain,Humans fight over TVs. I wait by the fridge.,Black Friday meme with no sell. CTA: tag a friend whose dog does this.,meme layout
-2026-11-28,Sat,image,Inside Petandim,Promote,My human asked what goes in my daily chew.,"Soft intro to Petandim: a daily chewable for dogs with omega-3, collagen and Nrf2-supporting ingredients (LifeVantage-approved wording only). CTA: link in bio or DM CHEW.",dog with product
-2026-11-29,Sun,image,Real Dogs,Inspire,Sunday walk. Show me yours.,"Calm gratitude post that opens the community: invite dog photos for next week's spotlight, with permission to repost. CTA: reply or DM a photo.",autumn walk
-2026-11-30,Mon,image,Pup Life,Entertain,"My Cyber Monday cart: one stick, zero regrets.",Humorous wish list of what dogs actually want. CTA: share your dog's list.,wish-list layout
-2026-12-01,Tue,image,Healthy Dog Basics,Educate,Is it too cold for the walk? 3 checks.,"Winter walk basics: paw check, shorter loops, dry-off routine. Small, senior or thin-coated dogs vary, ask your vet. CTA: save.",3-step graphic
-2026-12-02,Wed,image,Real Dogs,Connect,Walk or nap? Choose wisely.,This-or-that engagement post. CTA: vote in the comments.,split layout
-2026-12-03,Thu,video,Inside Petandim,Promote,What's in my daily chew? 30 seconds.,"Plain explainer: what Petandim is, who it's for, how it's given, with the independent-consultant line on screen. No disease claims. CTA: link in bio.",HeyGen video script
-2026-12-04,Fri,image,Pup Life,Entertain,"Dog logic, explained.",Relatable meme about a dog's reasoning. CTA: tag a dog parent.,meme layout
-2026-12-05,Sat,image,Inside Petandim,Promote,"Two ingredients, in dog terms.","Omega-3 and collagen explained in structure/function language only, from the product label. CTA: DM CHEW for details.",ingredient card
-2026-12-06,Sun,image,Real Dogs,Inspire,Meet the pack: [follower dog].,"Spotlight on a real follower's dog, with written permission. CTA: DM a photo for next time.",owner photo plus frame
-2026-12-07,Mon,image,Pup Life,Entertain,Kona vs the Christmas tree. The tree lost.,Holiday-chaos story in one frame. CTA: share your tree story.,tree scene
-2026-12-08,Tue,image,Healthy Dog Basics,Educate,5 habits of a happy older dog.,"Gentle walks, regular vet visits, a warm bed, dental care, healthy weight. No supplement mention. CTA: save.",5-point graphic
-2026-12-09,Wed,image,Real Dogs,Connect,Caption this.,"Funny dog photo, followers write the caption. CTA: best caption gets a shoutout.",reaction pose
-2026-12-10,Thu,video,Healthy Dog Basics,Educate,"Before you give your dog any supplement, ask this.","3 questions to ask any vet or brand: what's in it, what's the label evidence, what suits my dog. Brand-agnostic. CTA: share with a dog parent.",HeyGen video script
-2026-12-11,Fri,image,Pup Life,Entertain,Things dogs do at 3 a.m.,Relatable meme. CTA: tag a friend.,meme layout
-2026-12-12,Sat,image,Inside Petandim,Promote,How the daily chew fits into a routine.,"Simple how-to: it's a chewable tablet, given daily; talk to your vet first. CTA: link in bio.",routine graphic
-2026-12-13,Sun,image,Real Dogs,Inspire,"Meet the pack, part 2.","Second follower-dog spotlight, with permission. CTA: DM a photo.",owner photo plus frame
-2026-12-14,Mon,image,Pup Life,Entertain,Santa Paws has entered the chat.,Dog in a holiday scene. CTA: share your dog's holiday look.,Santa hat portrait
-2026-12-15,Tue,image,Healthy Dog Basics,Educate,4 holiday hazards on the floor.,"Chocolate, tinsel, ornaments, rich leftovers: keep out of reach, call the vet if swallowed. CTA: save.",hazard graphic
-2026-12-16,Wed,image,Real Dogs,Connect,What's on your dog's holiday wish list?,Open question that crowdsources replies. CTA: comment.,wish-list layout
-2026-12-17,Thu,video,Inside Petandim,Promote,A gift for the dog parent who has everything.,Gift angle: a daily routine item for the dog in your life; consultant disclosure on screen. Name only a real LifeVantage offer if one exists. CTA: link in bio.,HeyGen video script
-2026-12-18,Fri,image,Pup Life,Entertain,Kona reviews holiday movies.,Two-line review meme. CTA: tag a friend.,review card
-2026-12-19,Sat,image,Inside Petandim,Promote,One healthy habit for 2027.,"Soft New Year routine post that includes Petandim as one option among walks, vet visits and play. CTA: DM CHEW.",2027 routine card
-2026-12-20,Sun,image,Real Dogs,Inspire,"Thank you, pack.",Community recap of the month's dogs and best comments (permissions in hand). CTA: follow.,collage of approved photos
-2026-12-21,Mon,image,Pup Life,Entertain,"Shortest day, longest nap.",Winter solstice joke. CTA: share your dog's nap pose.,napping pose
-2026-12-22,Tue,image,Healthy Dog Basics,Educate,Your dog's 2027 checklist.,"Vet visit, dental check, weight, daily walk goal. CTA: save.",checklist graphic
+date,day,format,pillar,intent,hook,idea_cta,asset,caption,script
+2026-11-23,Mon,image,Pup Life,Entertain,I'm not real. My opinions on treats are.,"Meet Kona: who it is, what it cares about, plainly labeled as an AI dog. CTA: follow for daily pup content.",hero portrait,"Hi, I'm Kona! 🐾 I'm an AI-generated dog, so I don't eat snacks, but I have very strong opinions about them.
+
+Every day I'll share dog stories, simple care tips and my wish list. Real dogs are welcome in the comments.
+
+Follow along so you don't miss tomorrow's tip.
+
+#AIdog #dogsofinstagram #dogtips",
+2026-11-24,Tue,image,Healthy Dog Basics,Educate,Guests arrive Thursday. Does your dog have a plan?,"3-point holiday guest prep: a quiet room, door safety, no table scraps. CTA: save for Thursday.",checklist graphic,"Guests arrive Thursday. Does your dog have a plan? Kona (an AI-generated dog) here with 3 quick prep steps:
+
+1. Give your dog a quiet room with water and a bed.
+2. Practice the front-door routine before guests arrive.
+3. Ask guests not to share table scraps.
+
+Not sure what's safe for your dog? Ask your vet.
+
+Save this for Thursday.
+
+#dogtips #thanksgiving #AIdog #dogsafety",
+2026-11-25,Wed,image,Real Dogs,Connect,What is your dog thankful for? Mine: the fridge.,Gratitude prompt that invites photos and stories in the comments. CTA: comment.,dog with a pumpkin,"Kona here, an AI-generated dog. What is your dog thankful for? Mine is the fridge light at midnight. 🦃
+
+Tell me yours in the comments. Photos welcome!
+
+#thankful #dogsofinstagram #AIdog",
+2026-11-26,Thu,video,Pup Life,Entertain,"Reviewing the Thanksgiving table, from a dog's eye view.",Dog rates the table dish by dish and flags what dogs should skip; end card says check with your vet. CTA: share with a dog parent.,HeyGen video script,"Kona (an AI-generated dog) reviews the Thanksgiving table. I rate everything by smell, but not every dish is dog-friendly. When in doubt, ask your vet before sharing.
+
+Share this with a dog parent who needs it.
+
+#thanksgiving #AIdog #dogsafety #dogtips","Hi, I'm Kona, an AI-generated dog, and I'm reviewing your Thanksgiving table. Turkey: smells amazing, but skip the skin, the seasoning and the bones for your dog. Stuffing: onions and garlic are a no for dogs. Mashed potatoes: plain is usually fine in a small amount, but butter and salt add up. Pie: great for humans, not for dogs. Anything with chocolate: keep it away. Not sure about a dish? Ask your vet. Happy Thanksgiving from Kona!"
+2026-11-27,Fri,image,Pup Life,Entertain,Humans fight over TVs. I wait by the fridge.,Black Friday meme with no sell. CTA: tag a friend whose dog does this.,meme layout,"Humans fight over TVs. I wait by the fridge. 📺🧀
+
+I'm Kona, an AI-generated dog, and my priorities are clear.
+
+Tag a friend whose dog does this.
+
+#blackfriday #dogmemes #AIdog",
+2026-11-28,Sat,image,Inside Petandim,Promote,My human asked what goes in my daily chew.,"Soft intro to Petandim: a daily chewable for dogs with omega-3, collagen and Nrf2-supporting ingredients (LifeVantage-approved wording only). CTA: link in bio or DM CHEW.",dog with product,"My human asked what goes in my daily chew. I'm an AI-generated dog, so I can't take it myself, but here is what real dog parents ask me about.
+
+Petandim is a daily chewable for dogs with omega-3 fatty acids, collagen and Nrf2-supporting ingredients, made to support your dog's cellular health.
+
+Every dog is different. Talk to your vet first.
+
+Want details? DM me CHEW or tap the link in bio.
+
+Posted by an independent LifeVantage consultant.
+
+#Petandim #dogwellness #AIdog",
+2026-11-29,Sun,image,Real Dogs,Inspire,Sunday walk. Show me yours.,"Calm gratitude post that opens the community: invite dog photos for next week's spotlight, with permission to repost. CTA: reply or DM a photo.",autumn walk,"Sunday walk with Kona (an AI-generated dog). Today I'm thankful for sticks, sun and every dog parent who follows along. 🍂
+
+Show me your Sunday walk: DM a photo and your dog may be featured next week (only with your OK).
+
+#sundaywalk #dogsofinstagram #AIdog",
+2026-11-30,Mon,image,Pup Life,Entertain,"My Cyber Monday cart: one stick, zero regrets.",Humorous wish list of what dogs actually want. CTA: share your dog's list.,wish-list layout,"My Cyber Monday cart (AI-generated dog edition): 1 stick, 1 sunny spot, 0 regrets. 🛒
+
+What's on your dog's wish list? Share it below.
+
+#cybermonday #dogmemes #AIdog",
+2026-12-01,Tue,image,Healthy Dog Basics,Educate,Is it too cold for the walk? 3 checks.,"Winter walk basics: paw check, shorter loops, dry-off routine. Small, senior or thin-coated dogs vary, ask your vet. CTA: save.",3-step graphic,"Is it too cold for the walk? Kona (an AI-generated dog) shares 3 quick checks:
+
+1. Check paws for ice, salt or cracks.
+2. Keep walks shorter in the cold. Small, senior or thin-coated dogs may need extra care.
+3. Dry paws and belly when you get home.
+
+Not sure what's right for your dog? Ask your vet.
+
+Save this for the next cold snap.
+
+#wintertips #dogtips #AIdog #dogsafety",
+2026-12-02,Wed,image,Real Dogs,Connect,Walk or nap? Choose wisely.,This-or-that engagement post. CTA: vote in the comments.,split layout,"Walk or nap? Choose wisely. Kona (an AI-generated dog) votes nap. 😴
+
+Cast your vote in the comments: walk or nap?
+
+#thisorthat #dogsofinstagram #AIdog",
+2026-12-03,Thu,video,Inside Petandim,Promote,What's in my daily chew? 30 seconds.,"Plain explainer: what Petandim is, who it's for, how it's given, with the independent-consultant line on screen. No disease claims. CTA: link in bio.",HeyGen video script,"What's in my daily chew? Kona (an AI-generated dog) explains Petandim in 30 seconds.
+
+It's a daily chewable for dogs with omega-3 fatty acids, collagen and Nrf2-supporting ingredients, made to support your dog's cellular health. Talk to your vet first.
+
+Tap the link in bio for details.
+
+Posted by an independent LifeVantage consultant.
+
+#Petandim #dogwellness #AIdog","Hi, I'm Kona, an AI-generated dog. People keep asking what's in my daily chew, so here's the short version. Petandim is a daily chewable for dogs with omega-3 fatty acids, collagen and Nrf2-supporting ingredients, made to support your dog's cellular health. It's meat-flavored, and you follow the label directions. Every dog is different, so talk to your vet first. Details are in my bio. This video is from an independent LifeVantage consultant."
+2026-12-04,Fri,image,Pup Life,Entertain,"Dog logic, explained.",Relatable meme about a dog's reasoning. CTA: tag a dog parent.,meme layout,"Dog logic, explained: if I stare at the door long enough, a walk will happen. It has worked every time (I'm an AI-generated dog, so my sample size is small).
+
+Tag a dog parent who knows this feeling.
+
+#doglogic #dogmemes #AIdog",
+2026-12-05,Sat,image,Inside Petandim,Promote,"Two ingredients, in dog terms.","Omega-3 and collagen explained in structure/function language only, from the product label. CTA: DM CHEW for details.",ingredient card,"Two ingredients, in dog terms: omega-3 fatty acids and collagen. Both are part of the Petandim formula, alongside Nrf2-supporting ingredients, in a daily chew made to support your dog's cellular health.
+
+I'm an AI-generated dog, so I'll leave the science to your vet. Talk to your vet first.
+
+DM me CHEW for the label details.
+
+Posted by an independent LifeVantage consultant.
+
+#Petandim #dogwellness #AIdog",
+2026-12-06,Sun,image,Real Dogs,Inspire,Meet the pack: [follower dog].,"Spotlight on a real follower's dog, with written permission. CTA: DM a photo for next time.",owner photo plus frame,"Meet the pack! Today's featured dog: [DOG NAME], owned by [OWNER NAME], shared with permission.
+
+Kona (an AI-generated dog) says hi, [DOG NAME]! 🐶
+
+Want your dog featured next? DM me a photo.
+
+#dogsofinstagram #meetthepack #AIdog",
+2026-12-07,Mon,image,Pup Life,Entertain,Kona vs the Christmas tree. The tree lost.,Holiday-chaos story in one frame. CTA: share your tree story.,tree scene,"Kona vs the Christmas tree. The tree lost. 🎄 (I'm an AI-generated dog, so no real ornaments were harmed.)
+
+Share your dog's tree story below.
+
+#christmasdog #dogmemes #AIdog",
+2026-12-08,Tue,image,Healthy Dog Basics,Educate,5 habits of a happy older dog.,"Gentle walks, regular vet visits, a warm bed, dental care, healthy weight. No supplement mention. CTA: save.",5-point graphic,"5 habits of a happy older dog, from Kona (an AI-generated dog):
+
+1. Gentle daily walks
+2. Regular vet visits
+3. A warm, comfy bed
+4. Dental care
+5. A healthy weight
+
+Every dog is different, so ask your vet what's right for yours.
+
+Save this for later.
+
+#seniordog #dogtips #AIdog #dogcare",
+2026-12-09,Wed,image,Real Dogs,Connect,Caption this.,"Funny dog photo, followers write the caption. CTA: best caption gets a shoutout.",reaction pose,"Caption this! 📸 Kona (an AI-generated dog) needs your best caption for this look.
+
+The best one gets a shoutout in my Stories.
+
+#captionthis #dogsofinstagram #AIdog",
+2026-12-10,Thu,video,Healthy Dog Basics,Educate,"Before you give your dog any supplement, ask this.","3 questions to ask any vet or brand: what's in it, what's the label evidence, what suits my dog. Brand-agnostic. CTA: share with a dog parent.",HeyGen video script,"Before you give your dog any supplement, ask 3 questions: what's in it, what does the label say, and is it right for my dog? Your vet is the best person to answer.
+
+Kona (an AI-generated dog) here.
+
+Share this with a dog parent.
+
+#dogtips #dogwellness #AIdog #askyourvet","Hi, I'm Kona, an AI-generated dog. Before you give your dog any supplement, ask three questions. One: what exactly is in it? Read the whole ingredient list. Two: what does the label say, and can the company back it up? Be careful with big promises about health problems. Three: is it right for my dog? Your vet knows your dog's age, weight and health history, so ask them first. Smart dog parents ask questions. Woof!"
+2026-12-11,Fri,image,Pup Life,Entertain,Things dogs do at 3 a.m.,Relatable meme. CTA: tag a friend.,meme layout,"Things dogs do at 3 a.m.: stare at you, sigh dramatically, and ask if it's breakfast yet. Kona (an AI-generated dog) has no notes. 🌙
+
+Tag a friend whose dog does this.
+
+#dogmemes #3am #AIdog",
+2026-12-12,Sat,image,Inside Petandim,Promote,How the daily chew fits into a routine.,"Simple how-to: it's a chewable tablet, given daily; talk to your vet first. CTA: link in bio.",routine graphic,"A simple way to build a daily habit is to pair it with something your dog already does every day, like breakfast or the evening walk.
+
+Petandim is a meat-flavored chewable for dogs with omega-3 fatty acids, collagen and Nrf2-supporting ingredients, made to support cellular health. Follow the label directions. Talk to your vet first.
+
+I'm an AI-generated dog, so I'll just supervise. Details: link in bio.
+
+Posted by an independent LifeVantage consultant.
+
+#Petandim #dogroutine #AIdog",
+2026-12-13,Sun,image,Real Dogs,Inspire,"Meet the pack, part 2.","Second follower-dog spotlight, with permission. CTA: DM a photo.",owner photo plus frame,"Meet the pack, part 2! Today's featured dog: [DOG NAME], owned by [OWNER NAME], shared with permission.
+
+Kona (an AI-generated dog) says hi, [DOG NAME]! 🐕
+
+Want your dog featured next? DM me a photo.
+
+#dogsofinstagram #meetthepack #AIdog",
+2026-12-14,Mon,image,Pup Life,Entertain,Santa Paws has entered the chat.,Dog in a holiday scene. CTA: share your dog's holiday look.,Santa hat portrait,"Santa Paws has entered the chat. 🎅 Kona (an AI-generated dog) is on the nice list, mostly.
+
+Share your dog's holiday look below.
+
+#santapaws #christmasdog #AIdog",
+2026-12-15,Tue,image,Healthy Dog Basics,Educate,4 holiday hazards on the floor.,"Chocolate, tinsel, ornaments, rich leftovers: keep out of reach, call the vet if swallowed. CTA: save.",hazard graphic,"4 holiday hazards on the floor, from Kona (an AI-generated dog): chocolate, tinsel, small ornaments and rich leftovers.
+
+Keep them out of reach, and call your vet right away if your dog swallows something it shouldn't.
+
+Save this for the holidays.
+
+#holidaysafety #dogtips #AIdog #dogsafety",
+2026-12-16,Wed,image,Real Dogs,Connect,What's on your dog's holiday wish list?,Open question that crowdsources replies. CTA: comment.,wish-list layout,"What's on your dog's holiday wish list? Kona (an AI-generated dog) asked for a bigger stick and a nap schedule. 🎁
+
+Tell me yours in the comments!
+
+#wishlist #dogsofinstagram #AIdog",
+2026-12-17,Thu,video,Inside Petandim,Promote,A gift for the dog parent who has everything.,Gift angle: a daily routine item for the dog in your life; consultant disclosure on screen. Name only a real LifeVantage offer if one exists. CTA: link in bio.,HeyGen video script,"A gift idea for the dog parent who has everything: a daily routine item for the dog in your life.
+
+Kona (an AI-generated dog) shares Petandim, a meat-flavored daily chewable with omega-3 fatty acids, collagen and Nrf2-supporting ingredients, made to support cellular health. Talk to your vet first.
+
+Link in bio.
+
+Posted by an independent LifeVantage consultant.
+
+#Petandim #dogwellness #AIdog","Hi, I'm Kona, an AI-generated dog. Looking for a gift for the dog parent who has everything? How about something for the dog's daily routine. Petandim is a meat-flavored daily chewable with omega-3 fatty acids, collagen and Nrf2-supporting ingredients, made to support cellular health. Follow the label directions, and talk to your vet first. Link in my bio. This video is from an independent LifeVantage consultant."
+2026-12-18,Fri,image,Pup Life,Entertain,Kona reviews holiday movies.,Two-line review meme. CTA: tag a friend.,review card,"Kona (an AI-generated dog) reviews holiday movies:
+
+1. Any movie with a dog: 5 stars.
+2. Any movie with snacks: 4 stars.
+3. Any movie with a vacuum cleaner: 0 stars.
+
+Tag a friend who needs a movie night.
+
+#holidaymovies #dogmemes #AIdog",
+2026-12-19,Sat,image,Inside Petandim,Promote,One healthy habit for 2027.,"Soft New Year routine post that includes Petandim as one option among walks, vet visits and play. CTA: DM CHEW.",2027 routine card,"One healthy habit for 2027? Kona (an AI-generated dog) votes daily walks, regular vet visits, playtime and a steady routine.
+
+If a daily chew is part of your plan, Petandim is a meat-flavored chewable with omega-3 fatty acids, collagen and Nrf2-supporting ingredients, made to support cellular health. Talk to your vet first.
+
+DM me CHEW for details.
+
+Posted by an independent LifeVantage consultant.
+
+#Petandim #newyear #AIdog",
+2026-12-20,Sun,image,Real Dogs,Inspire,"Thank you, pack.",Community recap of the month's dogs and best comments (permissions in hand). CTA: follow.,collage of approved photos,"Thank you, pack! 🐾 This month Kona (an AI-generated dog) met so many great dogs and read so many great comments. Thank you for being here.
+
+Follow along for more in the new year.
+
+#thankyou #dogsofinstagram #AIdog",
+2026-12-21,Mon,image,Pup Life,Entertain,"Shortest day, longest nap.",Winter solstice joke. CTA: share your dog's nap pose.,napping pose,"Shortest day, longest nap. Kona (an AI-generated dog) is celebrating the winter solstice the only way I know how. 😴
+
+Share your dog's best nap pose below.
+
+#wintersolstice #dognap #AIdog",
+2026-12-22,Tue,image,Healthy Dog Basics,Educate,Your dog's 2027 checklist.,"Vet visit, dental check, weight, daily walk goal. CTA: save.",checklist graphic,"Your dog's 2027 checklist, from Kona (an AI-generated dog):
+
+✅ Vet visit
+✅ Dental check
+✅ Healthy weight
+✅ Daily walk goal
+
+Every dog is different, so ask your vet what's right for yours.
+
+Save this for January.
+
+#2027 #dogtips #AIdog #dogcare",

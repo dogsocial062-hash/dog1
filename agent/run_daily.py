@@ -67,7 +67,7 @@ def main():
     OUT.mkdir(exist_ok=True)
     failed = False
 
-    caption = stage("Gemini caption", lambda: draft.write_caption(row))
+    caption = stage("Caption", lambda: draft.get_caption(row))
     if caption is None:
         return 1
     issues = safety.check(row, caption)
@@ -75,15 +75,24 @@ def main():
 
     header = f"Draft for {row['date']} ({row['day']}) - {row['format']} - {row['intent']}"
     if row["format"] == "image":
-        img = stage("Gemini image", lambda: draft.make_image(row, OUT / f"{date}.png"))
-        if img is None:
-            failed = True
-            stage("Telegram", lambda: telegram.send_message(header + "\nIMAGE FAILED (see the GitHub run). Caption below."))
-        else:
+        img = draft.find_image(date)
+        if img is None and os.getenv("USE_GEMINI_IMAGES") == "1" and os.getenv("GEMINI_API_KEY"):
+            img = stage("Gemini image", lambda: draft.make_image(row, OUT / f"{date}.png"))
+            if img is None:
+                failed = True
+        if img is not None:
             if stage("Telegram photo", lambda: telegram.send_photo(img, header)) is None:
                 return 1
+        else:
+            stage("Telegram", lambda: telegram.send_message(
+                header + f"\nNO IMAGE YET. Add images/{date}.jpg to the repo "
+                "(see image_prompts.md for the Gemini prompt)."))
     else:
-        if stage("Telegram", lambda: telegram.send_message(header + "\n(Video: script below. HeyGen render is added in step 3.)")) is None:
+        script = (row.get("script") or "").strip()
+        note = header + "\n(Video day. HeyGen render is added in step 3.)"
+        if script:
+            note += "\n\nVIDEO SCRIPT:\n" + script
+        if stage("Telegram", lambda: telegram.send_message(note)) is None:
             return 1
 
     if stage("Telegram caption", lambda: telegram.send_message(caption)) is None:

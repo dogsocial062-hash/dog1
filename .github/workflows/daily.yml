@@ -24,6 +24,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           POST_DATE: ${{ github.event.inputs.post_date }}
+          USE_GEMINI_IMAGES: ${{ vars.USE_GEMINI_IMAGES }}
         run: python -m agent.run_daily
       - uses: actions/upload-artifact@v4
         if: always()

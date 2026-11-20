@@ -22,7 +22,10 @@ CONSULTANT_LINE = re.compile(r"independent\s+LifeVantage\s+consultant", re.IGNOR
 def check(row, caption):
     """Return a list of problems. Empty list means the draft passed."""
     issues = []
-    text = f"{row.get('hook', '')} {caption}"
+    text = f"{row.get('hook', '')} {caption} {row.get('script', '')}"
+
+    if re.search(r"\[[A-Z][A-Z ]+\]", caption):
+        issues.append("Caption still has a [PLACEHOLDER] to fill in (dog name, owner name).")
 
     for pattern in BANNED_PATTERNS:
         m = re.search(pattern, text, re.IGNORECASE)

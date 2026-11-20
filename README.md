@@ -11,6 +11,14 @@ and sends it to you on Telegram for review. Step 1 of the build: you approve and
 4. `agent/safety.py` flags banned claims and missing disclosures.
 5. The draft and the safety result arrive in your Telegram chat.
 
+## Image mode (no Gemini API billing needed)
+
+Captions and video scripts are pre-written in `content_plan.csv` (columns `caption`, `script`).
+Images come from the Gemini app: attach `character_ref.png`, paste the prompt for that day from
+`image_prompts.md`, save as JPEG, and add it to `images/` named `YYYY-MM-DD.jpg`.
+The daily job sends the caption and your image to Telegram, or tells you if the image is missing.
+To use the Gemini API instead, set repo variable/secret `USE_GEMINI_IMAGES=1` and add credits.
+
 ## Setup
 
 1. **Telegram bot**: message @BotFather, send `/newbot`, copy the token. Send any message to your new bot,
