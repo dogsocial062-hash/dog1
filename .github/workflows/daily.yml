@@ -1,0 +1,33 @@
+name: Daily draft
+
+on:
+  schedule:
+    - cron: "0 14 * * *"   # 14:00 UTC = 9:00 am ET (draft early so you can approve before noon)
+  workflow_dispatch:
+    inputs:
+      post_date:
+        description: "Date to draft (YYYY-MM-DD). Leave empty for today."
+        required: false
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Draft today's post and send to Telegram
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          POST_DATE: ${{ github.event.inputs.post_date }}
+        run: python -m agent.run_daily
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: draft-output
+          path: out/
+          if-no-files-found: ignore
