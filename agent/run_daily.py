@@ -16,6 +16,28 @@ from agent import draft, plan, safety
 OUT = pathlib.Path(__file__).resolve().parent.parent / "out"
 
 
+SECRET_VARS = ("GEMINI_API_KEY", "TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID")
+
+
+def scrub(text):
+    for var in SECRET_VARS:
+        val = os.getenv(var)
+        if val:
+            text = text.replace(val, "***")
+    return text
+
+
+def stage(name, fn):
+    """Run one step. On failure print a GitHub error annotation and return None."""
+    try:
+        result = fn()
+        return True if result is None else result
+    except Exception as e:  # noqa: BLE001
+        msg = scrub(f"{type(e).__name__}: {e}")[:600]
+        print(f"::error title={name} failed::{msg}")
+        return None
+
+
 def today_et():
     return dt.datetime.now(zoneinfo.ZoneInfo("America/New_York")).strftime("%Y-%m-%d")
 
@@ -43,22 +65,36 @@ def main():
     from agent import telegram
 
     OUT.mkdir(exist_ok=True)
-    caption = draft.write_caption(row)
+    failed = False
+
+    caption = stage("Gemini caption", lambda: draft.write_caption(row))
+    if caption is None:
+        return 1
     issues = safety.check(row, caption)
     (OUT / f"{date}.txt").write_text(caption, encoding="utf-8")
 
     header = f"Draft for {row['date']} ({row['day']}) - {row['format']} - {row['intent']}"
     if row["format"] == "image":
-        img = draft.make_image(row, OUT / f"{date}.png")
-        telegram.send_photo(img, header)
+        img = stage("Gemini image", lambda: draft.make_image(row, OUT / f"{date}.png"))
+        if img is None:
+            failed = True
+            stage("Telegram", lambda: telegram.send_message(header + "\nIMAGE FAILED (see the GitHub run). Caption below."))
+        else:
+            if stage("Telegram photo", lambda: telegram.send_photo(img, header)) is None:
+                return 1
     else:
-        telegram.send_message(header + "\n(Video: script below. HeyGen render is added in step 3.)")
+        if stage("Telegram", lambda: telegram.send_message(header + "\n(Video: script below. HeyGen render is added in step 3.)")) is None:
+            return 1
 
-    telegram.send_message(caption)
+    if stage("Telegram caption", lambda: telegram.send_message(caption)) is None:
+        return 1
     if issues:
-        telegram.send_message("SAFETY CHECK FAILED - do not post as is:\n- " + "\n- ".join(issues))
+        msg = "SAFETY CHECK FAILED - do not post as is:\n- " + "\n- ".join(issues)
     else:
-        telegram.send_message("Safety check passed. Post it manually, or edit first.")
+        msg = "Safety check passed. Post it manually, or edit first."
+    stage("Telegram", lambda: telegram.send_message(msg))
+    if failed:
+        return 1
     return 0
 
 
