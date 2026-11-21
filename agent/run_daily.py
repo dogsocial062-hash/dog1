@@ -98,10 +98,16 @@ def main():
     if stage("Telegram caption", lambda: telegram.send_message(caption)) is None:
         return 1
     if issues:
-        msg = "SAFETY CHECK FAILED - do not post as is:\n- " + "\n- ".join(issues)
+        msg = "SAFETY CHECK FAILED - will NOT post:\n- " + "\n- ".join(issues)
+        stage("Telegram", lambda: telegram.send_message(msg))
+    elif row["format"] == "image" and img is not None:
+        stage("Telegram", lambda: telegram.send_message(
+            "Safety check passed. Tap Approve and I will post this to Instagram automatically "
+            "(within about 5 minutes).",
+            buttons=[[("✅ Approve & post", f"approve:{date}"), ("❌ Skip today", f"skip:{date}")]]))
     else:
-        msg = "Safety check passed. Post it manually, or edit first."
-    stage("Telegram", lambda: telegram.send_message(msg))
+        stage("Telegram", lambda: telegram.send_message(
+            "Safety check passed. This one needs a manual post (video, or no image yet)."))
     if failed:
         return 1
     return 0

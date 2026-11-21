@@ -49,3 +49,12 @@ DRY_RUN=1 POST_DATE=2026-11-28 python -m agent.run_daily
 - [ ] Step 2: Approve / Skip buttons and automatic posting through a scheduler API
 - [ ] Step 3: HeyGen video on Thursdays
 - [ ] Step 4: fully unattended in the cloud
+
+## Automatic posting with Telegram approval
+
+1. **Daily draft** (9:00 am ET) sends the image, caption and safety result to Telegram with
+   **Approve & post** and **Skip today** buttons.
+2. **Approvals** workflow (every ~5 minutes) reads your taps. Approve posts to Instagram;
+   Skip does nothing. `state/status.json` records what was posted so nothing posts twice.
+3. Failures and successes come back to Telegram. Video days and posts that fail the safety check
+   are never auto-posted.

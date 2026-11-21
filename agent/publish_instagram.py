@@ -32,6 +32,7 @@ def scrub(text):
 
 def fail(msg):
     print(f"::error title=Instagram publish failed::{scrub(msg)[:600]}")
+    notify("Instagram post NOT published: " + scrub(msg)[:300])
     return 1
 
 
