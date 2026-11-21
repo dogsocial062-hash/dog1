@@ -23,7 +23,7 @@ def caption_prompt(row):
         "Never use cure, prevent, heal or 'treat' as a medical verb, and never name any disease (the noun 'treats' for snacks is fine). No income or earnings talk.",
         "Health tips end with 'ask your vet'.",
         "Keep the dog's voice warm, funny and short. 2-4 short paragraphs for a caption.",
-        "End with exactly one call to action. Add 3-5 relevant hashtags.",
+        "End with exactly one call to action. Add 3-5 relevant hashtags. Do not write a shop link: one is added automatically.",
     ]
     if promo:
         rules += [
@@ -65,10 +65,37 @@ def _client():
     return _CLIENT
 
 
+SHOP_URL = "https://thefacts.lifevantage.com/us-en/shop/petandim-dogs"
+CTA_LINE = f"🐾 Learn more about Petandim: {SHOP_URL}"
+DISCLOSURE = "Posted by an independent LifeVantage consultant. Talk to your vet first."
+
+
+def add_footer(caption):
+    """Add the Petandim link CTA (and the disclosure that must travel with it) to every post.
+
+    Safe to call twice: pieces already in the caption are not repeated. The block goes
+    above a trailing hashtag line so the hashtags stay last.
+    """
+    caption = caption.strip()
+    lines = caption.split("\n")
+    tags = ""
+    if lines and lines[-1].strip() and all(w.startswith("#") for w in lines[-1].split()):
+        tags = lines.pop().strip()
+        caption = "\n".join(lines).strip()
+    extra = []
+    if SHOP_URL not in caption:
+        extra.append(CTA_LINE)
+    low = caption.lower()
+    if "independent lifevantage consultant" not in low or "vet" not in low:
+        extra.append(DISCLOSURE)
+    out = caption + ("\n\n" + "\n".join(extra) if extra else "")
+    return out + ("\n\n" + tags if tags else "")
+
+
 def get_caption(row):
-    """Use the pre-written caption from content_plan.csv; fall back to Gemini if it is empty."""
+    """Use the pre-written caption from content_plan.csv (or Gemini if empty), plus the link CTA."""
     stored = (row.get("caption") or "").strip()
-    return stored if stored else write_caption(row)
+    return add_footer(stored if stored else write_caption(row))
 
 
 def find_image(date):
