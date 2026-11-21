@@ -17,7 +17,7 @@ import requests
 
 from agent import draft, plan, safety
 
-GRAPH = "https://graph.instagram.com/v21.0"
+HOSTS = ("https://graph.instagram.com/v21.0", "https://graph.facebook.com/v21.0")
 RAW = "https://raw.githubusercontent.com/{repo}/main/images/{name}"
 SECRETS = ("INSTAGRAM_ACCESS_TOKEN", "TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID")
 
@@ -51,6 +51,19 @@ def call(method, url, **kw):
     return r.json()
 
 
+def pick_host(uid, token):
+    """Find which Graph host accepts this token (Instagram-login vs Facebook-login tokens)."""
+    errors = []
+    for host in HOSTS:
+        try:
+            info = call("GET", f"{host}/{uid}", params={"fields": "username", "access_token": token})
+            print(f"Token OK on {host.split('/')[2]} for @{info.get('username', '?')}")
+            return host
+        except Exception as e:  # noqa: BLE001
+            errors.append(f"{host.split('/')[2]}: {e}")
+    raise RuntimeError("Token rejected by both hosts. " + " | ".join(errors))
+
+
 def main():
     date = os.getenv("POST_DATE", "").strip()
     if not date:
@@ -76,12 +89,22 @@ def main():
     image_url = RAW.format(repo=repo, name=img.name)
     print(f"Post {date}: {len(caption)} chars, image {image_url}")
 
+    token, uid = os.getenv("INSTAGRAM_ACCESS_TOKEN", ""), os.getenv("INSTAGRAM_USER_ID", "")
     if os.getenv("DRY_RUN") == "1":
+        if token and uid:  # read-only check that the saved secrets work
+            try:
+                pick_host(uid, token)
+            except Exception as e:  # noqa: BLE001
+                return fail(f"Token check failed: {e}")
+        else:
+            print("Secrets not set; skipping token check.")
         print("DRY_RUN: would create a container and publish. Caption:\n" + caption)
         return 0
 
-    token, uid = os.environ["INSTAGRAM_ACCESS_TOKEN"], os.environ["INSTAGRAM_USER_ID"]
+    if not (token and uid):
+        return fail("INSTAGRAM_ACCESS_TOKEN and INSTAGRAM_USER_ID secrets are required.")
     try:
+        GRAPH = pick_host(uid, token)
         # The image must be publicly reachable, so check that before asking Instagram to fetch it.
         head = requests.head(image_url, timeout=30, allow_redirects=True)
         if not head.ok:
